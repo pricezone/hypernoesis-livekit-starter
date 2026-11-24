@@ -23,6 +23,9 @@ RUN git init -q \
  && git remote add origin https://github.com/Rikorose/DeepFilterNet.git \
  && git fetch -q --depth 1 origin "${DFN_COMMIT}" \
  && git checkout -q FETCH_HEAD
+# The Cargo.lock at that commit is out of date; this one pins the crate
+# versions the noise-cancellation tests ran against.
+COPY livekit-agents/deepfilternet/Cargo.lock ./Cargo.lock
 RUN cargo build --release --locked -p deep_filter --no-default-features --features capi \
  && install -D -m 0644 target/release/libdf.so /out/libdf.so \
  && install -D -m 0644 models/DeepFilterNet3_onnx.tar.gz /out/DeepFilterNet3_onnx.tar.gz \

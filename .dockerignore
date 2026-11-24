@@ -6,5 +6,6 @@
 !livekit-agents/uv.lock
 !livekit-agents/.python-version
 !livekit-agents/src/
+!livekit-agents/deepfilternet/Cargo.lock
 **/__pycache__
 **/*.py[cod]

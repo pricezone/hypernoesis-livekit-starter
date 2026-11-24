@@ -1,6 +1,6 @@
 [project]
 name = "hypernoesis-livekit-starter"
-version = "0.1.0"
+version = "0.1.1"
 description = "Starter voice agent (LiveKit Agents) for Self-Hosted LiveKit on HyperNoesis"
 license = "MIT"
 requires-python = ">=3.12,<3.14"
