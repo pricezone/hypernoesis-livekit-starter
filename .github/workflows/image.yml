@@ -1,6 +1,8 @@
 name: image
 
-# Builds and pushes ghcr.io/pricezone/hypernoesis-livekit-starter:<version> and :latest.
+# Builds and pushes, for each starter agent, <image>:<version> and :latest:
+#   livekit-agents/ -> ghcr.io/pricezone/hypernoesis-livekit-starter
+#   pipecat/        -> ghcr.io/pricezone/hypernoesis-livekit-starter-pipecat
 #
 # GitHub-hosted runners ONLY. Never register a self-hosted runner to this public
 # repository: pull requests from forks could run their code on it.
@@ -29,9 +31,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [livekit-agents, pipecat]
     defaults:
       run:
-        working-directory: livekit-agents
+        working-directory: ${{ matrix.project }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -50,6 +56,16 @@ jobs:
     permissions:
       contents: read
       packages: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - project: livekit-agents
+            title: hypernoesis-livekit-starter
+            description: Starter voice agent (LiveKit Agents) for Self-Hosted LiveKit on HyperNoesis
+          - project: pipecat
+            title: hypernoesis-livekit-starter-pipecat
+            description: Starter voice agent (Pipecat) for Self-Hosted LiveKit on HyperNoesis
     steps:
       - name: Resolve the version
         id: version
@@ -80,22 +96,23 @@ jobs:
       - id: meta
         uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
         with:
-          images: ghcr.io/pricezone/hypernoesis-livekit-starter
+          images: ghcr.io/pricezone/${{ matrix.title }}
           tags: |
             type=raw,value=${{ steps.version.outputs.version }}
             type=raw,value=latest
           labels: |
-            org.opencontainers.image.title=hypernoesis-livekit-starter
-            org.opencontainers.image.description=Starter voice agent (LiveKit Agents) for Self-Hosted LiveKit on HyperNoesis
+            org.opencontainers.image.title=${{ matrix.title }}
+            org.opencontainers.image.description=${{ matrix.description }}
             org.opencontainers.image.licenses=MIT
 
       - uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
         with:
           context: .
-          file: livekit-agents/Dockerfile
+          file: ${{ matrix.project }}/Dockerfile
           platforms: linux/amd64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # One cache per image, so the two builds do not evict each other.
+          cache-from: type=gha,scope=${{ matrix.project }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.project }}
