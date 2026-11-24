@@ -1,0 +1,63 @@
+[project]
+name = "hypernoesis-livekit-starter"
+version = "0.1.0"
+description = "Starter voice agent (LiveKit Agents) for Self-Hosted LiveKit on HyperNoesis"
+license = "MIT"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    # LiveKit Agents core. Its bundled local inference provides the Silero VAD
+    # and the turn-detector-v1-mini end-of-turn model (no download, no PyTorch).
+    "livekit-agents==1.8.13",
+    "livekit-plugins-openai==1.8.13",
+    "livekit-plugins-anthropic==1.8.13",
+    "livekit-plugins-google==1.8.13",
+    "livekit-plugins-deepgram==1.8.13",
+    "livekit-plugins-elevenlabs==1.8.13",
+    "livekit-plugins-cartesia==1.8.13",
+    "livekit-plugins-speechmatics==1.8.13",
+    "aiohttp~=3.10",
+    "numpy>=1.26",
+]
+
+[project.scripts]
+hn-agent = "hn_agent.__main__:main"
+
+[dependency-groups]
+dev = [
+    "pytest==9.2.0",
+    "pytest-asyncio==1.5.0",
+    "ruff==0.17.6",
+]
+
+[build-system]
+requires = ["uv_build>=0.9,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "hn_agent"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "A", "C4", "UP", "SIM", "RUF", "S", "ASYNC"]
+ignore = [
+    "E501",   # line length is the formatter's job
+    "RUF001", # Greek letters in strings are intentional
+    "RUF002",
+    "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
