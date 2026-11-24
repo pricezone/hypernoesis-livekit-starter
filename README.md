@@ -315,7 +315,7 @@ Agents worker joins after the Pipecat bot would have two agents.
   "accepting_jobs": true,
   "sdk_version": "1.17.0",
   "framework": "pipecat",
-  "version": "0.1.1"
+  "version": "0.1.2"
 }
 ```
 

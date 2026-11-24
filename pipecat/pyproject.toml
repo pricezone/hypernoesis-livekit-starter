@@ -1,6 +1,6 @@
 [project]
 name = "hypernoesis-livekit-starter-pipecat"
-version = "0.1.1"
+version = "0.1.2"
 description = "Starter voice agent (Pipecat) for Self-Hosted LiveKit on HyperNoesis"
 license = "MIT"
 requires-python = ">=3.12,<3.14"
