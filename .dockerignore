@@ -7,5 +7,10 @@
 !livekit-agents/.python-version
 !livekit-agents/src/
 !livekit-agents/deepfilternet/Cargo.lock
+!pipecat/pyproject.toml
+!pipecat/uv.lock
+!pipecat/.python-version
+!pipecat/src/
+!pipecat/deepfilternet/Cargo.lock
 **/__pycache__
 **/*.py[cod]
