@@ -1,0 +1,415 @@
+THIRD-PARTY NOTICES
+hypernoesis-livekit-starter
+
+The code in this repository is MIT-licensed (see LICENSE). The container image
+built from it also contains the third-party software listed below, each under
+its own licence. Licence texts of the Python packages ship inside the image in
+/app/.venv/lib/python3.13/site-packages/*.dist-info/; DeepFilterNet's licences
+are in /opt/deepfilternet/.
+
+"LiveKit" is a trademark of LiveKit, Inc. This project is not affiliated with or
+endorsed by LiveKit, Inc.; the name is used only to describe compatibility.
+
+===============================================================================
+1. LiveKit agent-starter-python
+===============================================================================
+Source: https://github.com/livekit-examples/agent-starter-python
+Licence: MIT
+
+The starter agent in livekit-agents/ was written from scratch for this project,
+using LiveKit's open-source starter and the LiveKit Agents documentation as
+references (project layout, multi-stage Dockerfile with a non-root user, voice
+output rules in the default prompt). Its notice is reproduced here:
+
+MIT License
+
+Copyright (c) 2025  LiveKit, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===============================================================================
+2. LiveKit Agents, plugins and SDKs
+===============================================================================
+livekit-agents, livekit-plugins-*, livekit (rtc), livekit-api, livekit-protocol,
+livekit-blingfire: Copyright LiveKit, Inc., Apache License 2.0
+(https://www.apache.org/licenses/LICENSE-2.0). Used unmodified as dependencies.
+
+===============================================================================
+3. LiveKit local inference models (VAD and turn-detector-v1-mini)
+===============================================================================
+Package: livekit-local-inference 0.3.2 (code: Apache-2.0; bundled models:
+LiveKit Model License, reproduced below). The bundled models may only be used
+together with the LiveKit Agents framework, which is how this agent uses them.
+They are NOT covered by this repository's MIT licence.
+
+LIVEKIT MODEL LICENSE AGREEMENT
+
+1. Introduction
+
+   LiveKit Incorporated ("LiveKit") is making available its proprietary models for
+   use pursuant to the terms and conditions of this Agreement. As further
+   described below, you may use these LiveKit models freely but can only use them
+   together with the LiveKit Agents framework. You cannot use the LiveKit models
+   on a standalone basis or with any other frameworks.
+
+   BY CLICKING "I ACCEPT," OR BY DOWNLOADING, INSTALLING, OR OTHERWISE ACCESSING
+   OR USING THE LIVEKIT MATERIALS, YOU AGREE THAT YOU HAVE READ AND UNDERSTOOD,
+   AND, AS A CONDITION TO YOUR USE OF THE LIVEKIT MATERIALS, YOU AGREE TO BE
+   BOUND BY, THE FOLLOWING TERMS AND CONDITIONS.
+
+2. Definitions
+
+   "Agreement" means this LiveKit Model License Agreement.
+
+   "Documentation" means the specifications, manuals, and documentation
+   accompanying any LiveKit Model and distributed by LiveKit.
+
+   "Licensee" or "you" means the individual or entity agreeing to be bound by
+   this Agreement.
+
+   "LiveKit Agents" means the proprietary LiveKit software framework for building
+   real-time multimodal AI applications with programmable backend participants.
+
+   "LiveKit Materials" means, collectively, the LiveKit Models and Documentation.
+
+   "LiveKit Model" means any of LiveKit's proprietary software models or
+   algorithms, including machine-learning software code, model weights,
+   inference-enabling software code, training-enabling software code, and
+   fine-tuning enabling software code. Any derivative works of a LiveKit Model,
+   whether developed by LiveKit, you, or any third party, will be deemed the
+   "LiveKit Model" for the purposes of this Agreement.
+
+3. License Rights
+
+   Right to Use LiveKit Materials. Subject to the terms and conditions of this
+   Agreement, including the requirements of Section 3.b, LiveKit grants you a
+   nonexclusive, nontransferable, worldwide, royalty-free license under LiveKit's
+   intellectual property rights to use, reproduce, distribute, copy, and create
+   derivative works of the LiveKit Materials.
+
+   Limitation on Use. As a condition to your use of the LiveKit Materials, you
+   agree: (i) not to use any LiveKit Models on a standalone basis or with any
+   frameworks other than LiveKit Agents; (ii) not to use any LiveKit Materials or
+   any output from, or results of using, LiveKit Models (including any derivative
+   works thereof) to improve or otherwise develop any other models that are not
+   LiveKit Models; or (iii) distribute or otherwise make available the LiveKit
+   Materials (including any derivative works thereof) except (x) pursuant to the
+   terms of this Agreement, and (y) you reproduce the above copyright notice.
+
+4. Intellectual Property
+
+   The LiveKit Materials are owned by LiveKit and its licensors. Except for the
+   rights granted to you under this Agreement, all rights are reserved and no
+   other express or implied rights are granted.
+
+   You will own any derivative works that you created from the LiveKit Materials,
+   subject to the terms of this Agreement.
+
+5. Disclaimer
+
+   UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING, LIVEKIT PROVIDES
+   THE LIVEKIT MATERIALS, AND ANY OUTPUT OR RESULTS THEREFROM, ON AN "AS IS"
+   BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+   INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE,
+   NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU
+   ARE SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING OR
+   REDISTRIBUTING THE LIVEKIT MATERIALS AND ASSUME ANY RISKS ASSOCIATED WITH YOUR
+   USE OF THE LIVEKIT MATERIALS AND ANY OUTPUT AND RESULTS.
+
+6. Limitation of Liability
+
+   IN NO EVENT AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE),
+   CONTRACT, OR OTHERWISE, UNLESS REQUIRED BY APPLICABLE LAW (SUCH AS DELIBERATE
+   AND GROSSLY NEGLIGENT ACTS) OR AGREED TO IN WRITING, WILL LIVEKIT BE LIABLE TO
+   YOU FOR INDIRECT DAMAGES, INCLUDING ANY SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+   DAMAGES OF ANY CHARACTER ARISING AS A RESULT OF THIS AGREEMENT OR OUT OF THE
+   USE OR INABILITY TO USE THE LIVEKIT MATERIALS OR ANY OUTPUT OR RESULTS
+   THEREFROM (INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF GOODWILL, WORK
+   STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL
+   DAMAGES OR LOSSES), EVEN IF LIVEKIT HAS BEEN ADVISED OF THE POSSIBILITY OF
+   SUCH DAMAGES.
+
+7. Trademarks
+
+   This Agreement does not grant permission to use the trade names, trademarks,
+   service marks, or product names of LiveKit, except as required for reasonable
+   and customary use in describing the origin of the LiveKit Materials.
+
+8. Term and Termination
+
+   The term of this Agreement commences upon your acceptance of this Agreement
+   and continues in effect until you cease using the LiveKit Materials or it is
+   terminated by either party (on immediate written notice to the other party).
+   This Agreement will automatically terminate if you breach any of its terms.
+   Upon termination, you must immediately cease all use of the LiveKit Materials.
+   Sections 4, 5, 6, and 9 will survive termination.
+
+9. Governing Law and Venue
+
+   This Agreement is subject to the laws of the State of California, without
+   regard to its conflict of laws principles. The UN Convention on Contracts for
+   the International Sale of Goods does not apply to this Agreement. The courts
+   located in San Francisco, California, have exclusive jurisdiction for any
+   dispute arising out of this Agreement.
+
++ + + +
+
+Last Updated: November 25, 2024
+
+===============================================================================
+4. DeepFilterNet (noise cancellation, optional)
+===============================================================================
+Source: https://github.com/Rikorose/DeepFilterNet
+Commit: 7b14b895fe7fc42cab72b4a4c1e49c982bd6404b
+Used: libDF C API (libdf.so, built in the image) and the DeepFilterNet3 ONNX
+model weights (models/DeepFilterNet3_onnx.tar.gz).
+Licence: code and model weights are dual-licensed MIT OR Apache-2.0; this
+project uses them under the MIT licence:
+
+The MIT License (MIT)
+Copyright (c) 2021 Hendrik Schröter
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+libdf.so statically links these Rust crates (name, version, licence):
+
+  addr2line                    v0.21.0    Apache-2.0 OR MIT
+  adler                        v1.0.2     0BSD OR MIT OR Apache-2.0
+  ahash                        v0.8.11    MIT OR Apache-2.0
+  aho-corasick                 v1.1.3     Unlicense OR MIT
+  anyhow                       v1.0.82    MIT OR Apache-2.0
+  backtrace                    v0.3.71    MIT OR Apache-2.0
+  bitflags                     v2.13.2    MIT OR Apache-2.0
+  bit-set                      v0.5.3     MIT/Apache-2.0
+  bit-vec                      v0.6.3     MIT/Apache-2.0
+  byteorder                    v1.5.0     Unlicense OR MIT
+  bytes                        v1.6.0     MIT
+  cfg-if                       v1.0.0     MIT/Apache-2.0
+  const-random-macro           v0.1.16    MIT OR Apache-2.0
+  const-random                 v0.1.18    MIT OR Apache-2.0
+  crc32fast                    v1.4.0     MIT OR Apache-2.0
+  crossbeam-channel            v0.5.12    MIT OR Apache-2.0
+  crossbeam-utils              v0.8.19    MIT OR Apache-2.0
+  crunchy                      v0.2.2     MIT
+  derive-new                   v0.5.9     MIT
+  dlv-list                     v0.5.2     MIT OR Apache-2.0
+  downcast-rs                  v1.2.1     MIT/Apache-2.0
+  dyn-clone                    v1.0.17    MIT OR Apache-2.0
+  either                       v1.11.0    MIT OR Apache-2.0
+  filetime                     v0.2.23    MIT/Apache-2.0
+  flate2                       v1.0.30    MIT OR Apache-2.0
+  getrandom                    v0.2.14    MIT OR Apache-2.0
+  gimli                        v0.28.1    MIT OR Apache-2.0
+  half                         v2.4.1     MIT OR Apache-2.0
+  hashbrown                    v0.14.5    MIT OR Apache-2.0
+  itertools                    v0.10.5    MIT/Apache-2.0
+  itertools                    v0.12.1    MIT OR Apache-2.0
+  lazy_static                  v1.4.0     MIT/Apache-2.0
+  libc                         v0.2.191   MIT OR Apache-2.0
+  libm                         v0.2.8     MIT OR Apache-2.0
+  linux-raw-sys                v0.4.13    Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT
+  log                          v0.4.21    MIT OR Apache-2.0
+  maplit                       v1.0.2     MIT/Apache-2.0
+  matrixmultiply               v0.3.8     MIT/Apache-2.0
+  memchr                       v2.7.2     Unlicense OR MIT
+  memmap2                      v0.9.4     MIT OR Apache-2.0
+  minimal-lexical              v0.2.1     MIT/Apache-2.0
+  miniz_oxide                  v0.7.2     MIT OR Zlib OR Apache-2.0
+  ndarray                      v0.15.6    MIT OR Apache-2.0
+  nom                          v7.1.3     MIT
+  num-complex                  v0.4.5     MIT OR Apache-2.0
+  num-integer                  v0.1.46    MIT OR Apache-2.0
+  num-traits                   v0.2.19    MIT OR Apache-2.0
+  object                       v0.32.2    Apache-2.0 OR MIT
+  once_cell                    v1.19.0    MIT OR Apache-2.0
+  ordered-multimap             v0.7.3     MIT
+  paste                        v1.0.14    MIT OR Apache-2.0
+  ppv-lite86                   v0.2.17    MIT/Apache-2.0
+  primal-check                 v0.3.3     MIT OR Apache-2.0
+  proc-macro2                  v1.0.107   MIT OR Apache-2.0
+  prost-derive                 v0.11.9    Apache-2.0
+  prost                        v0.11.9    Apache-2.0
+  quote                        v1.0.36    MIT OR Apache-2.0
+  rand_chacha                  v0.3.1     MIT OR Apache-2.0
+  rand_core                    v0.6.4     MIT OR Apache-2.0
+  rand_distr                   v0.4.3     MIT OR Apache-2.0
+  rand                         v0.8.5     MIT OR Apache-2.0
+  rawpointer                   v0.2.1     MIT/Apache-2.0
+  realfft                      v3.3.0     MIT
+  regex-automata               v0.4.6     MIT OR Apache-2.0
+  regex-syntax                 v0.8.3     MIT OR Apache-2.0
+  regex                        v1.10.4    MIT OR Apache-2.0
+  rubato                       v0.14.1    MIT
+  rustc-demangle               v0.1.23    MIT/Apache-2.0
+  rustfft                      v6.2.0     MIT OR Apache-2.0
+  rust-ini                     v0.21.0    MIT
+  rustix                       v0.38.34   Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT
+  same-file                    v1.0.6     Unlicense/MIT
+  scan_fmt                     v0.2.6     MIT
+  serde                        v1.0.200   MIT OR Apache-2.0
+  smallvec                     v1.13.2    MIT OR Apache-2.0
+  strength_reduce              v0.2.4     MIT OR Apache-2.0
+  string-interner              v0.15.0    MIT/Apache-2.0
+  syn                          v1.0.109   MIT OR Apache-2.0
+  syn                          v2.0.60    MIT OR Apache-2.0
+  tar                          v0.4.40    MIT/Apache-2.0
+  thiserror-impl               v1.0.59    MIT OR Apache-2.0
+  thiserror                    v1.0.59    MIT OR Apache-2.0
+  tiny-keccak                  v2.0.2     CC0-1.0
+  tract-core                   v0.21.4    MIT OR Apache-2.0
+  tract-data                   v0.21.4    MIT OR Apache-2.0
+  tract-hir                    v0.21.4    MIT OR Apache-2.0
+  tract-linalg                 v0.21.4    MIT OR Apache-2.0
+  tract-nnef                   v0.21.4    MIT OR Apache-2.0
+  tract-onnx-opl               v0.21.4    MIT OR Apache-2.0
+  tract-onnx                   v0.21.4    MIT OR Apache-2.0
+  tract-pulse-opl              v0.21.4    MIT OR Apache-2.0
+  tract-pulse                  v0.21.4    MIT OR Apache-2.0
+  transpose                    v0.2.3     MIT OR Apache-2.0
+  trim-in-place                v0.1.7     MIT
+  unicode-ident                v1.0.12    (MIT OR Apache-2.0) AND Unicode-DFS-2016
+  walkdir                      v2.5.0     Unlicense/MIT
+  xattr                        v1.3.1     MIT/Apache-2.0
+  zerocopy                     v0.7.33    BSD-2-Clause OR Apache-2.0 OR MIT
+
+===============================================================================
+5. Python packages in the image
+===============================================================================
+Runtime dependencies from livekit-agents/uv.lock (name, version, licence as
+declared in the package metadata). The full licence texts are in each package's
+.dist-info directory inside the image. Note: the PyAV wheel ("av") bundles
+FFmpeg libraries, which are licensed under the LGPL 2.1 or later.
+
+  aiofiles                                       25.1.0               Apache-2.0
+  aiohappyeyeballs                               2.7.1                PSF-2.0
+  aiohttp                                        3.14.5               Apache-2.0 AND MIT
+  aiosignal                                      1.4.0                Apache 2.0
+  annotated-doc                                  0.0.7                MIT
+  annotated-types                                0.8.0                MIT
+  anthropic                                      1.17.0               MIT
+  anyio                                          4.16.0               MIT
+  attrs                                          26.1.0               MIT
+  av                                             19.0.2               BSD-3-Clause
+  certifi                                        2026.11.20           MPL-2.0
+  cffi                                           2.1.1                MIT-0
+  charset-normalizer                             3.5.3                MIT
+  click                                          8.5.1                BSD-3-Clause
+  colorama                                       0.4.6                BSD License
+  cryptography                                   50.0.2               Apache-2.0 OR BSD-3-Clause
+  distro                                         1.9.0                Apache License, Version 2.0
+  docstring-parser                               0.18.0               MIT
+  eval-type-backport                             0.4.0                MIT
+  frozenlist                                     1.8.0                Apache-2.0
+  google-api-core                                2.44.0               Apache 2.0
+  google-auth                                    2.63.1               Apache 2.0
+  google-cloud-speech                            2.41.0               Apache-2.0
+  google-cloud-texttospeech                      2.38.0               Apache-2.0
+  google-genai                                   3.6.1                Apache-2.0
+  googleapis-common-protos                       1.76.0               Apache-2.0
+  grpcio                                         1.85.3               Apache-2.0
+  grpcio-status                                  1.85.3               Apache-2.0
+  h11                                            0.16.0               MIT
+  httpcore2                                      2.16.2               BSD-3-Clause
+  httpx2                                         2.16.2               BSD-3-Clause
+  idna                                           3.20                 BSD-3-Clause
+  jiter                                          0.19.0               MIT
+  json-repair                                    0.63.5               MIT
+  livekit                                        1.2.1                Apache-2.0
+  livekit-agents                                 1.8.13               Apache-2.0
+  livekit-api                                    1.2.3                Apache-2.0
+  livekit-blingfire                              1.2.1                Apache-2.0
+  livekit-local-inference                        0.3.2                Apache-2.0 AND LicenseRef-LiveKit-Model
+  livekit-plugins-anthropic                      1.8.13               Apache-2.0
+  livekit-plugins-cartesia                       1.8.13               Apache-2.0
+  livekit-plugins-deepgram                       1.8.13               Apache-2.0
+  livekit-plugins-elevenlabs                     1.8.13               Apache-2.0
+  livekit-plugins-google                         1.8.13               Apache-2.0
+  livekit-plugins-openai                         1.8.13               Apache-2.0
+  livekit-plugins-speechmatics                   1.8.13               Apache-2.0
+  livekit-protocol                               1.1.32               Apache-2.0
+  markdown-it-py                                 4.3.0                MIT License
+  mdurl                                          0.1.2                MIT License
+  multidict                                      7.2.1                Apache-2.0
+  nest-asyncio                                   1.6.0                BSD
+  numpy                                          2.5.5                BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0
+  openai                                         3.58.0               Apache-2.0
+  opentelemetry-api                              1.45.2               Apache-2.0
+  opentelemetry-exporter-http-transport          0.66b2               Apache-2.0
+  opentelemetry-exporter-otlp                    1.45.2               Apache-2.0
+  opentelemetry-exporter-otlp-common             0.66b2               Apache-2.0
+  opentelemetry-exporter-otlp-proto-common       1.45.2               Apache-2.0
+  opentelemetry-exporter-otlp-proto-grpc         1.45.2               Apache-2.0
+  opentelemetry-exporter-otlp-proto-http         1.45.2               Apache-2.0
+  opentelemetry-proto                            1.45.2               Apache-2.0
+  opentelemetry-sdk                              1.45.2               Apache-2.0
+  opentelemetry-semantic-conventions             0.66b2               Apache-2.0
+  pillow                                         13.0.0               MIT-CMU
+  prometheus-client                              0.26.0               Apache-2.0 AND BSD-2-Clause
+  propcache                                      0.5.4                Apache-2.0
+  proto-plus                                     1.29.0               Apache 2.0
+  protobuf                                       7.36.2               3-Clause BSD License
+  psutil                                         7.2.2                BSD-3-Clause
+  pyasn1                                         0.6.5                BSD-2-Clause
+  pyasn1-modules                                 0.4.2                BSD
+  pycparser                                      3.12                 BSD-3-Clause
+  pydantic                                       2.14.4               MIT
+  pydantic-core                                  2.50.5               MIT
+  pygments                                       2.21.0               BSD-2-Clause
+  pyjwt                                          2.15.1               MIT
+  pyyaml                                         6.0.4                MIT
+  requests                                       2.34.2               Apache-2.0
+  rich                                           15.0.0               MIT
+  shellingham                                    1.5.4                ISC License
+  sniffio                                        1.3.1                MIT OR Apache-2.0
+  sounddevice                                    0.5.6                MIT
+  speechmatics-agent-stt                         0.3.0                MIT
+  speechmatics-rt                                1.3.0                MIT
+  speechmatics-voice                             0.2.8                MIT
+  tenacity                                       9.1.4                Apache 2.0
+  truststore                                     0.10.5               MIT
+  typer                                          0.29.2               MIT
+  types-protobuf                                 7.35.1.20261122      Apache-2.0
+  typing-extensions                              4.16.0               PSF-2.0
+  typing-inspection                              0.4.5                MIT
+  urllib3                                        2.8.0                MIT
+  watchfiles                                     1.3.0                MIT
+  websockets                                     17.4                 BSD-3-Clause
+  yarl                                           1.25.1               Apache-2.0
+
+===============================================================================
+6. Base image
+===============================================================================
+python:3.13-slim (Debian GNU/Linux packages under their own licences, see
+/usr/share/doc/*/copyright in the image; CPython under the PSF License) and,
+in the build stage only, rust:slim and ghcr.io/astral-sh/uv (not shipped).

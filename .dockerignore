@@ -1,0 +1,10 @@
+# Allow-list: the image build only sees what is listed below.
+*
+!LICENSE
+!THIRD_PARTY_NOTICES
+!livekit-agents/pyproject.toml
+!livekit-agents/uv.lock
+!livekit-agents/.python-version
+!livekit-agents/src/
+**/__pycache__
+**/*.py[cod]
